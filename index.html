@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="style1.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const users = JSON.parse(localStorage.getItem("users")) || [];
+            const currentUser = localStorage.getItem("currentUser");
+            if (currentUser && users.some(user => user.email === currentUser)) {
+                window.location.href = "dashboard.html";
+            } else {
+                window.location.href = "login.html";
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="container text-center mt-5">
+       
+    </div>
+</body>
+</html>
